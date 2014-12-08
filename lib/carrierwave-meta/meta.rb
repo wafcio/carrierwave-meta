@@ -82,7 +82,7 @@ module CarrierWave
             raise "Unsupported file type/image processor (use RMagick, MiniMagick, ImageSorcery, VIPS)"
           end
           img
-        end
+        end if respond_to?(:manipulate!, true)
       end
     rescue CarrierWave::ProcessingError
     end
